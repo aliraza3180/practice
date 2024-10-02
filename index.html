@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Navigation Bar</title>
+    <title>Tasks by Ali</title>
+
+    <link rel="icon" href="asset/logo.svg" type="image/svg+xml" />
+
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -16,28 +19,28 @@
   </head>
   <body>
     <header class="header-main">
-        <a class="logo">
-            <img class="logo-img" src="asset/logo.svg" alt="Logo" />
-        </a>
-        <div class="menuToggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times cross"></i>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li class="list-item"><a href="">Home</a></li>
-                <li class="list-item"><a href="">About</a></li>
-                <li class="list-item">
-                    <a href="#">Services<i class="fa-solid fa-caret-down"></i></a>
-                    <ul class="drop-down">
-                        <li class="list-item-2"><a href="">Service 1</a></li>
-                        <li class="list-item-2"><a href="">Service 2</a></li>
-                        <li class="list-item-2"><a href="">Service 3</a></li>
-                    </ul>
-                </li>
-                <li class="list-item"><a href="">Contact</a></li>
+      <a class="logo">
+        <img class="logo-img" src="asset/logo.svg" alt="Logo" />
+      </a>
+      <div class="menuToggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times cross"></i>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li class="list-item"><a href="">Home</a></li>
+          <li class="list-item"><a href="">About</a></li>
+          <li class="list-item">
+            <a href="#">Services<i class="fa-solid fa-caret-down"></i></a>
+            <ul class="drop-down">
+              <li class="list-item-2"><a href="">Service 1</a></li>
+              <li class="list-item-2"><a href="">Service 2</a></li>
+              <li class="list-item-2"><a href="">Service 3</a></li>
             </ul>
-        </nav>
+          </li>
+          <li class="list-item"><a href="">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="container">
@@ -57,38 +60,37 @@
       </div>
     </div>
     <div class="container-2">
-        <h2>Registration Form</h2>
-        <form id="registrationForm">
-          <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" required />
-            <small class="error-message" id="nameError"></small>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required />
-            <small class="error-message" id="emailError"></small>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" required minlength="8" />
-            <small class="error-message" id="passwordError"></small>
-          </div>
-          <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" required />
-            <small class="error-message" id="confirmPasswordError"></small>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number (optional)</label>
-            <input type="text" id="phone" placeholder="XXX-XXX-XXXX" />
-            <small class="error-message" id="phoneError"></small>
-          </div>
-          <button type="submit">Register</button>
-        </form>
-        <div id="successMessage" class="success-message"></div>
-      </div>
-  
+      <h2>Registration Form</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required />
+          <small class="error-message" id="nameError"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+          <small class="error-message" id="emailError"></small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required minlength="8" />
+          <small class="error-message" id="passwordError"></small>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required />
+          <small class="error-message" id="confirmPasswordError"></small>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="text" id="phone" placeholder="XXX-XXX-XXXX" />
+          <small class="error-message" id="phoneError"></small>
+        </div>
+        <button class="btn" type="submit">Register</button>
+      </form>
+      <div id="successMessage" class="success-message"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
