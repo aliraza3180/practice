@@ -1,9 +1,19 @@
 document.querySelector(".menuToggle").addEventListener("click", function () {
   const navbar = document.querySelector(".navbar");
   navbar.classList.toggle("active");
-
   this.classList.toggle("active");
 });
+
+document.addEventListener("click", function (event) {
+  const navbar = document.querySelector(".navbar");
+  const menuToggle = document.querySelector(".menuToggle");
+
+  if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+    navbar.classList.remove("active");
+    menuToggle.classList.remove("active");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registrationForm");
 
