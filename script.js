@@ -1,17 +1,55 @@
-document.querySelector(".menuToggle").addEventListener("click", function () {
-  const navbar = document.querySelector(".navbar");
-  navbar.classList.toggle("active");
-  this.classList.toggle("active");
+const menuToggle = document.querySelector(".menuToggle");
+const navbar = document.querySelector(".navbar");
+const servicesLink = document.querySelector(".services-link");
+const dropDown = document.querySelector(".drop-down");
+const caretIcon = servicesLink.querySelector(".fa-caret-down");
+
+function closeAll() {
+    navbar.classList.remove("active");
+    menuToggle.classList.remove("active");
+    if (window.innerWidth <= 768) {
+        dropDown.classList.remove("show");
+        caretIcon.classList.remove("rotate-icon");
+    }
+}
+
+menuToggle.addEventListener("click", function () {
+    navbar.classList.toggle("active");
+    this.classList.toggle("active");
+    if (window.innerWidth <= 768) {
+        dropDown.classList.remove("show");
+        caretIcon.classList.remove("rotate-icon");
+    }
+});
+
+servicesLink.addEventListener("click", function (event) {
+    if (window.innerWidth <= 768) {
+        event.preventDefault();
+        dropDown.classList.toggle("show");
+        caretIcon.classList.toggle("rotate-icon");
+    }
 });
 
 document.addEventListener("click", function (event) {
-  const navbar = document.querySelector(".navbar");
-  const menuToggle = document.querySelector(".menuToggle");
+    const isClickInsideNavbar = navbar.contains(event.target);
+    const isClickOnMenuToggle = menuToggle.contains(event.target);
+    const isClickOnServicesLink = servicesLink.contains(event.target);
 
-  if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
-    navbar.classList.remove("active");
-    menuToggle.classList.remove("active");
-  }
+    if (!isClickInsideNavbar && !isClickOnMenuToggle) {
+        closeAll();
+    } else if (isClickInsideNavbar && !isClickOnServicesLink && window.innerWidth <= 768) {
+        dropDown.classList.remove("show");
+        caretIcon.classList.remove("rotate-icon");
+    }
+});
+
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+        navbar.classList.remove("active");
+        menuToggle.classList.remove("active");
+        dropDown.classList.remove("show");
+        caretIcon.classList.remove("rotate-icon");
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {

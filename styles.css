@@ -10,128 +10,183 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 2px 80px;
-  color: white;
-  position: fixed;
-  min-height: 66px;
-  width: 100%;
-  z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 2px 80px;
+    color: white;
+    position: fixed;
+    min-height: 66px;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .logo-img {
-  width: 60px;
-  height: auto;
+    width: 60px;
+    height: auto;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
+    display: flex;
+    list-style: none;
 }
 
 .list-item {
-  position: relative;
+    position: relative;
 }
 
 .list-item a {
-  color: white;
-  font-size: 1.1rem;
-  padding: 20px 25px;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    color: white;
+    font-size: 1.1rem;
+    padding: 20px 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .list-item a:hover {
-  background-color: #444;
+    background-color: #444;
 }
 
 .drop-down {
-  position: absolute;
-  left: 0;
-  width: 200px;
-  background: #445964;
-  display: none;
-  z-index: 999;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #445964;
+    display: none;
+    z-index: 999;
 }
 
-.list-item:hover .drop-down {
-  display: block;
+.nav-links .list-item:hover .drop-down {
+    display: block; 
 }
 
 .list-item-2 {
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .menuToggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .menuToggle .cross {
-  display: none;
+    display: none;
 }
 
 .menuToggle.active .cross {
-  display: block;
+    display: block;
 }
 
 .menuToggle.active .fa-bars {
-  display: none;
+    display: none;
+}
+
+.fa-caret-down {
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
-  .header-main {
-    padding: 10px 20px;
-  }
+    .header-main {
+        padding: 10px 20px;
+    }
 
-  .navbar {
-    position: fixed;
-    width: 250px;
-    top: 87px;
-    left: -250px;
-    background: #445964;
-    height: calc(100vh - 66px);
-    transition: all 0.3s linear;
-    overflow-y: auto;
-  }
+    .navbar {
+        position: fixed;
+        width: 250px;
+        top: 66px;
+        left: -250px;
+        background: #445964;
+        height: calc(100vh - 66px);
+        transition: all 0.3s linear;
+        overflow-y: auto;
+    }
 
-  .navbar.active {
-    left: 0;
-  }
+    .navbar.active {
+        left: 0;
+    }
 
-  .nav-links {
-    flex-direction: column;
-  }
+    .nav-links {
+        flex-direction: column;
+    }
 
-  .list-item {
-    width: 100%;
-  }
+    .list-item {
+        width: 100%;
+    }
 
-  .drop-down {
-    position: relative;
-    width: 100%;
-    display: none;
-  }
+    .drop-down {
+        position: static;
+        width: 100%;
+        display: none;
+    }
 
-  .list-item:hover .drop-down {
-    display: block;
-  }
+    .drop-down.show {
+        display: block;
+    }
 
-  .menuToggle {
-    display: block;
-  }
+    .menuToggle {
+        display: block;
+    }
+
+    .rotate-icon {
+        transform: rotate(180deg);
+    }
+    
+}@media (max-width: 768px) {
+    .header-main {
+        padding: 10px 20px;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 250px;
+        top: 87px;
+        left: -250px;
+        background: #445964;
+        height: calc(100vh - 66px);
+        transition: all 0.3s linear;
+        overflow-y: auto;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .list-item {
+        width: 100%;
+    }
+
+    .drop-down {
+        position: relative;
+        width: 100%;
+        display: none;
+    }
+
+    .drop-down.show {
+        display: block;
+    }
+
+    .menuToggle {
+        display: block;
+    }
+
+    .rotate-icon {
+        transform: rotate(180deg);
+    }
 }
 .container {
   perspective: 1000px;
